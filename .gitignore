@@ -10,3 +10,9 @@ backend/.local/
 # Local runtime files
 tmp/
 *.tsbuildinfo
+
+# Local design and review documents
+/原型图/
+/*.md
+/*.txt
+/src/features/reference-home/design-qa.md
