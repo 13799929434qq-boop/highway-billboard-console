@@ -1,0 +1,45 @@
+server:
+  port: ${SERVER_PORT:8081}
+  address: ${SERVER_ADDRESS:127.0.0.1}
+spring:
+  application:
+    name: billboard-management
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME}?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+      database: ${REDIS_DB:0}
+      timeout: 3000ms
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 50MB
+  jackson:
+    time-zone: Asia/Shanghai
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+jwt:
+  secret: ${JWT_SECRET}
+  expire-hours: 12
+upload:
+  dir: ${UPLOAD_DIR:uploads}
+storage:
+  endpoint: ${MINIO_ENDPOINT:http://127.0.0.1:9000}
+  access-key: ${MINIO_ACCESS_KEY:}
+  secret-key: ${MINIO_SECRET_KEY:}
+  bucket: ${MINIO_BUCKET:billboard-files}
+springdoc:
+  swagger-ui:
+    path: /doc.html

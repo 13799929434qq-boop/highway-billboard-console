@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env.local
+test-results/
+playwright-report/
+backend/target/
+backend/uploads/
+backend/.local/
+
+# Local runtime files
+tmp/
+*.tsbuildinfo

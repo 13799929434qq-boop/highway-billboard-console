@@ -1,0 +1,1 @@
+ALTER TABLE biz_billboard ADD COLUMN asset_nature VARCHAR(100) NOT NULL DEFAULT '';
